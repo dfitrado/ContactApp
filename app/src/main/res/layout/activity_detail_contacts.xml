@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddContact"
+    android:id="@+id/parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtProfileName"
+                android:layout_marginTop="25dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:id="@+id/edtTxtName"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtProfileName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:hint="Name"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edtTxtNumber"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtTxtName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:hint="Number"
+                android:inputType="number"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edtTxtEmail"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtTxtNumber"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edtTxtLat"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtTxtEmail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:hint="Latitude"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edtTxtLng"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtTxtLat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:hint="Longitude"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/edtTxtDaerah"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtTxtLng"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:hint="Nama Daerah"
+                android:textSize="15sp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/edtTxtDaerah"
+                android:id="@+id/relLayout2">
+
+                <Button
+                    android:id="@+id/btnCari"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Find Place"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"/>
+
+                <Button
+                    android:id="@+id/btnGo"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/btnCari"
+                    android:layout_marginTop="10dp"
+                    android:text="Find Maps"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/relLayout2"
+                android:layout_marginTop="10dp"
+                tools:context=".MapsActivity" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/map"
+                android:id="@+id/relLayout3">
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Delete"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"/>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/btnDelete"
+                    android:layout_marginTop="10dp"
+                    android:text="Update"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnJarak"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout3"
+                android:layout_marginTop="10dp"
+                android:text="Hitung Jarak"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
