@@ -1,4 +1,4 @@
-# Mid Term Project (ETS) for PBKK course
+# Mid Term Project (ETS) for PPB course
 By:
 - Samuel Marcellinus (05111740000134)
 - Donny Fitrado (05111740000171)
